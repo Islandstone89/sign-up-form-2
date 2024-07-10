@@ -1,0 +1,233 @@
+
+/* CSS RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* Avoid orphans on paragraphs */
+p {
+    text-wrap: pretty;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-inline-size: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* FONTS */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(assets/fonts/Roboto-Light.woff2) format("woff2");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(assets/fonts/Roboto-Regular.woff2) format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(assets/fonts/Roboto-Medium.woff2) format("woff2");
+    font-weight: 500;
+}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+    /* COLORS */
+
+    --clr-primary: #1b1c40;
+    --clr-cta-100: #4968ad; 
+    --clr-cta-200: #1e2c4b;
+    --clr-bg: #f5f9ff;
+    --clr-accent: #abc7ef;
+    --clr-neutral: #fff;
+    --clr-error: #B81515;
+
+    /* TYPOGRAPHY */
+
+    --ff-primary: 'Roboto', sans-serif;
+    --fw-300: 300;
+    --fw-500: 500;
+    --fs-small: 1rem;
+    --fs-regular: 1.125rem;
+    --fs-large: 1.75rem;
+}
+
+/* UTILITIES */
+
+.visually-hidden {
+    clip-path: inset(50%);
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+}
+
+.flow {
+    --flow-space: 1rem;
+}
+
+.flow > * + * {
+    margin-block-start: var(--flow-space);
+}
+
+.small {
+    font-size: var(--fs-small);
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+
+/* GENERAL STYLING */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    padding: 1rem;
+    background-color: var(--clr-bg);
+    color: var(--clr-primary);
+    font-family: var(--ff-primary);
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-500);
+    line-height: 1.5;
+}
+
+.card {
+    max-width: 30rem;
+    background-color: var(--clr-neutral);
+    padding: 4rem;
+    border-radius: 16px;
+}
+
+.form {
+    --flow-space: 2rem;
+}
+
+.form > * {
+    --flow-space: 1.5rem;
+}
+
+input:not([type="checkbox"]) {
+    width: 100%;
+    padding: .5em;
+}
+
+.input-wrapper > * {
+    --flow-space: .5rem;
+}
+
+.cta {
+    color: var(--clr-neutral);
+    border-radius: 4px;
+    padding: .75em 2em;
+    width: 100%;
+    cursor: pointer;
+    border: transparent;
+    font-weight: inherit;
+
+    &:is(:hover, :focus) {
+        opacity: .9;
+        transition: .2s ease-in;
+    }
+}
+
+.facebook {
+    background-color: var(--clr-cta-100);
+}
+
+.account {
+    --flow-space: 2rem;
+    background-color: var(--clr-cta-200);
+}
+
+
+
+.checkbox-wrapper {
+    --flow-space: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.checkbox {
+    accent-color: var(--clr-primary);
+}
+
+.error {
+    color: var(--clr-error);
+    display: nones;
+}
+
