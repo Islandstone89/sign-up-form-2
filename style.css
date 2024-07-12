@@ -108,6 +108,7 @@ textarea:not([rows]) {
     --clr-accent: #abc7ef;
     --clr-neutral: #fff;
     --clr-error: #B81515;
+    --clr-success: #048204;
 
     /* TYPOGRAPHY */
 
@@ -228,6 +229,10 @@ input:not([type="checkbox"]) {
 
 .error {
     color: var(--clr-error);
-    display: nones;
+    display: none;
 }
 
+.success {
+    color: var(--clr-success);
+    display: none;
+}
